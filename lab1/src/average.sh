@@ -1,8 +1,10 @@
 #!/bin/bash
-$sum = 0
-$count  = 0
-for i in "$@"
+
+while read arg; 
 do
-    $sum = $(($(sum+${i}))
-    $count  = $(($count+1))
+sum=$(( $sum + $arg ))
+count=$(( $count + 1 ))
 done
+average=$(( $sum / $count ))
+echo "Среднее арифметическое = $average"
+echo "Количество = $count"
